@@ -1,22 +1,22 @@
-# Benz
+# Benz — Personal Media Feed
 
-Benz is an Android shortcut-launcher prototype. It is designed to select a shortcut published by another app (such as GameHub) and launch that exact shortcut when the Benz icon is tapped.
+Benz is a private, offline-first Android media viewer with a swipe feed inspired by short-video apps. It only displays media that you choose from your device; it does not download or stream content from the internet.
 
-## Android limitation
+## Features
 
-Android's LauncherApps shortcut APIs are restricted to the current Home launcher (or an eligible voice interaction service). To enumerate and launch another app's shortcuts, Benz asks the user to select Benz as the default Home app. This is an Android platform restriction.
+- Import multiple photos and videos from your device using Android's file picker.
+- Three separate feeds: landscape videos (16:9), portrait videos (9:16), and photos.
+- Swipe up/down to move between items.
+- Search imported media by its original file name.
+- Remembers your imported library between launches using persistent document permissions.
+- Videos loop automatically; tap a video to pause or resume.
 
-## Build
+## Build APK
 
-GitHub Actions builds a debug APK on pushes to main and pull requests. The artifact is named `Benz-debug-apk`.
+GitHub Actions builds a debug APK on pushes to `main` and pull requests. Open the repository's **Actions** tab, select the latest **Build Benz APK** run, and download the `Benz-debug-apk` artifact. The APK is inside the downloaded artifact as `app-debug.apk`.
 
-## Test
+## Notes
 
-1. Install the APK.
-2. Open **Benz Setup**.
-3. Select Benz as the Android Home app when prompted.
-4. Choose the app that created the shortcut (GameHub).
-5. If Android exposes its shortcuts through LauncherApps, choose the desired shortcut.
-6. Tap **Benz** to launch it. Open **Benz Setup** to change the selection.
-
-If GameHub's item is not a real Android ShortcutManager shortcut, Android may not expose it through this API. In that case, we need to inspect how that version of GameHub creates its home-screen icons.
+- Imported media stays on your device. Benz stores document URIs and display names, not copies of your files.
+- The app needs access only to the media files you select in the Android picker.
+- Video orientation is classified from its stored width and height metadata.
