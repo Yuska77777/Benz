@@ -1,22 +1,16 @@
-# Benz — Personal Media Feed
+# Pink Heart Live Wallpaper
 
-Benz is a private, offline-first Android media viewer with a swipe feed inspired by short-video apps. It only displays media that you choose from your device; it does not download or stream content from the internet.
+An Android live wallpaper with floating pink hearts, soft sparkles, subtle image sway, and touch-triggered heart bursts.
 
-## Features
+## Build an APK
+1. Open this project in Android Studio (Android Gradle Plugin 8.6.1; JDK 17).
+2. Add your portrait image as `app/src/main/assets/wallpaper.png` (the supplied image is not embedded in this GitHub upload yet).
+3. Sync Gradle.
+4. Select **Build → Build Bundle(s) / APK(s) → Build APK(s)**.
+5. Apply **Pink Heart Live Wallpaper** from Android's Live Wallpaper picker.
 
-- Import multiple photos and videos from your device using Android's file picker.
-- Three separate feeds: landscape videos (16:9), portrait videos (9:16), and photos.
-- Swipe up/down to move between items.
-- Search imported media by its original file name.
-- Remembers your imported library between launches using persistent document permissions.
-- Videos loop automatically; tap a video to pause or resume.
+If no image is added, the wallpaper still runs with a soft pink background, floating hearts, sparkles, and touch effects.
 
-## Build APK
-
-GitHub Actions builds a debug APK on pushes to `main` and pull requests. Open the repository's **Actions** tab, select the latest **Build Benz APK** run, and download the `Benz-debug-apk` artifact. The APK is inside the downloaded artifact as `app-debug.apk`.
-
-## Notes
-
-- Imported media stays on your device. Benz stores document URIs and display names, not copies of your files.
-- The app needs access only to the media files you select in the Android picker.
-- Video orientation is classified from its stored width and height metadata.
+- Min Android: 6.0 (API 23)
+- No network permission or third-party runtime libraries.
+- This repository contains source code, not a prebuilt APK.
